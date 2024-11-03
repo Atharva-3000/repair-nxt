@@ -1,5 +1,6 @@
-'use client' // Error boundaries must be Client Components
-import * as Sentry from '@sentry/nextjs';
+'use client'
+
+import * as Sentry from "@sentry/nextjs"
 import { useEffect } from 'react'
 
 export default function GlobalError({
@@ -14,8 +15,8 @@ export default function GlobalError({
         console.error(error)
         Sentry.captureException(error)
     }, [error])
+
     return (
-        // global-error must include html and body tags
         <html>
             <body>
                 <h2>Something went wrong!</h2>

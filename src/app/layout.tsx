@@ -17,10 +17,10 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: {
     template: '%s | Computer Repair Shop',
-    default: 'Computer Repair Shop'
+    default: 'Computer Repair Shop',
   },
-  description: "Creted with love by Atharva-3000",
-  applicationName: "Repair NXT: Computer Repair Shop",
+  description: "Dan's Computer Repair Shop",
+  applicationName: "Repair Shop"
 };
 
 export default function RootLayout({
@@ -29,11 +29,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true} >
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
