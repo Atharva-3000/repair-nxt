@@ -8,8 +8,8 @@ export const insertCustomerSchema = createInsertSchema(customers, {
     city: (schema) => schema.city.min(1, "City is required"),
     state: (schema) => schema.state.length(2, "State must be exactly 2 characters"),
     email: (schema) => schema.email.email("Invalid email address"),
-    zip: (schema) => schema.zip.regex(/^\d{6}?&/,"Invalid Zip Code. Write a proper 6 digit zip code."),
-    phone: (schema) => schema.phone.regex(/^\d{10}&/,"Invalid Phone Number. Write a proper 10 digit phone number.")
+    zip: (schema) => schema.zip.regex(/^\d{6}$/,"Invalid Zip Code. Write a proper 6 digit zip code."),
+    phone: (schema) => schema.phone.regex(/^\d{10}$/,"Invalid Phone Number. Write a proper 10 digit phone number.")
 });
 
 export const selectCustomerSchema = createSelectSchema(customers);
